@@ -46,16 +46,17 @@ $app->post('/', function ($request, $response)
 				// --------------------------------------------------------------- LINE CODE
 				
 				$inputMessage = $event['message']['text'];
+				$userId = $event['source']['userId'];
 
 				if ($inputMessage[0] == '/'){
 					$inputMessage = ltrim($inputMessage, '/');
 					$inputSplit = explode(' ', $inputMessage, 2);
 
 					if (function_exists($inputSplit[0])){
-						$outputMessage = $inputSplit[0]($inputSplit[1]);
+						$outputMessage = $inputSplit[0]($inputSplit[1], $userId);
 					}
 					else {
-						$outputMessage = new TextMessageBuilder('Gapaham woy');
+						$outputMessage = new TextMessageBuilder('Maaf, perintah tidak ditemukan');
 					}
 
 					$result = $bot->replyMessage($event['replyToken'], $outputMessage);
