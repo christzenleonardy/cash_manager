@@ -47,7 +47,7 @@ $app->post('/', function ($request, $response)
 				
 				$inputMessage = $event['message']['text'];
 
-				if ($inputMessage[0] = '/'){
+				if ($inputMessage[0] == '/'){
 					$inputMessage = ltrim($inputMessage, '/');
 					$inputSplit = explode(' ', $inputMessage, 2);
 
