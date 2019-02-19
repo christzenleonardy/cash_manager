@@ -13,12 +13,11 @@ function add_transaction($query, $userId){
             $result = new TextMessageBuilder("Add some transaction");
         }
         else {
-            $querySplit = explode(' ', $query, 3);
-            $time = strtolower($querySplit[0]);
+            $querySplit = explode(' ', $query, 2);
+            $time = $querySplit[0];
             $transaction = $querySplit[1];
-            $price = $querySplit[2];
 
-            postData('time/'.$time, $transaction, $price);
+            postData('time/'.$time, $transaction);
 
             $result = new TextMessageBuilder('Transaction added');
         }
