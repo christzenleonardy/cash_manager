@@ -67,7 +67,7 @@ $app->post('/', function ($request, $response)
 					return $result->getHTTPStatus().' '.$result->getRawBody();
 				}
 				else {
-					$transaction = file_get_contents('https://cash-manager-1c0d9.firebaseio.com/time.json');
+					$transaction = file_get_contents('https://cash-manager-1c0d9.firebaseio.com/words.json');
 					$transaction = json_decode($transaction, true);
 
 					foreach ($transaction as $he => $answer){
