@@ -2,7 +2,7 @@
 
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder as TextMessageBuilder;
 
-function print($userId){
+function print_transaction($userId){
     if ($userId != ''){
         $result = new TextMessageBuilder("You're not registered");
     }

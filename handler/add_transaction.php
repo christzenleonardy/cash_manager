@@ -2,7 +2,7 @@
 
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder as TextMessageBuilder;
 
-function add($query, $userId){
+function add_transaction($query, $userId){
     include 'post.php';
 
     if ($userId != 'U13bf0657b7444e955a594ba8d039cc7f'){
