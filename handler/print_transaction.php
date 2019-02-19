@@ -10,8 +10,8 @@ function print_transaction($when, $userId){
         $transaction = file_get_contents('https://cash-manager-1c0d9.firebaseio.com/time.json');
         $transaction = json_decode($transaction, true);
 
-        foreach ($transaction as $paid => $answer){
-            $outputMessage = new TextMessageBuilder($answer);
+        foreach ($transaction as $paid){
+            $outputMessage = new TextMessageBuilder($paid);
             
             $result = $bot->replyMessage($event['replyToken'], $outputMessage);
 			return $result->getHTTPStatus().' '.$result->getRawBody();
